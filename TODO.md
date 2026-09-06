@@ -86,5 +86,7 @@ Fresh-layout verification: 24 unit tests, 15 browser tests and production build 
 - [x] Add a tested GitHub Pages build and deployment workflow.
 - [x] Document the public repository and live map URL.
 - [x] Run unit, browser and production-build checks for the publishable artifact.
-- [ ] Commit the complete milestone and push it to a new public GitHub repository.
-- [ ] Enable GitHub Pages, verify the deployment, and add the live URL to the repository description.
+- [x] Commit the complete milestone and push it to a new public GitHub repository.
+- [x] Enable GitHub Pages, verify the deployment, and add the live URL to the repository description.
+
+Publication verification: GitHub Actions passed its test, build and deploy jobs. The public HTTPS page returned 200 and loaded all 47 nodes and 81 relationships without browser errors. The repository description and homepage both reference the deployed map.
