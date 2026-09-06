@@ -1,0 +1,266 @@
+digraph SILO_SYSTEM {
+
+    graph [
+        rankdir=LR,
+        splines=spline,
+        overlap=false,
+        compound=true,
+        label="SILO: Survival, Stasis and Systemic Contradiction",
+        labelloc=t
+    ];
+
+    node [
+        shape=box,
+        style="rounded"
+    ];
+
+    edge [
+        fontsize=10
+    ];
+
+    /* -------------------------
+       GOVERNANCE
+       ------------------------- */
+
+    subgraph cluster_control {
+        label="Governance and control";
+
+        "Pact rigidity";
+        "Enforcement intensity";
+        "Surveillance";
+        "Knowledge suppression";
+        "Official narrative";
+        "Compliance";
+        "Political stability";
+        "Perceived political threat";
+        "Restricted technology";
+    }
+
+    /* -------------------------
+       KNOWLEDGE
+       ------------------------- */
+
+    subgraph cluster_knowledge {
+        label="Knowledge and adaptation";
+
+        "Historical knowledge";
+        "Practical technical skill";
+        "Curiosity";
+        "Experimentation";
+        "Innovation";
+        "Informal knowledge transmission";
+        "Clandestine preservation";
+    }
+
+    /* -------------------------
+       ENGINEERING
+       ------------------------- */
+
+    subgraph cluster_engineering {
+        label="Engineering and material system";
+
+        "Infrastructure age";
+        "Infrastructure failures";
+        "Maintenance burden";
+        "Repair capability";
+        "Improvisation";
+        "Component scarcity";
+        "Manufacturing capability";
+        "Recycling and reuse";
+        "Infrastructure reliability";
+    }
+
+    /* -------------------------
+       SPATIAL / SOCIAL
+       ------------------------- */
+
+    subgraph cluster_social {
+        label="Spatial and social structure";
+
+        "Restrictions on vertical transport";
+        "Travel friction";
+        "Inter-level contact";
+        "Information delay";
+        "Social distance";
+        "Collective coordination";
+        "Dissent";
+    }
+
+    /* -------------------------
+       OUTCOMES
+       ------------------------- */
+
+    subgraph cluster_outcomes {
+        label="System outcomes";
+
+        "Adaptive capacity";
+        "System resilience";
+        "Systemic fragility";
+        "Population survival";
+    }
+
+
+    /* ===== R1: CONTROL LOCK-IN ===== */
+
+    "Enforcement intensity" -> "Compliance"
+        [label="+"];
+
+    "Compliance" -> "Political stability"
+        [label="+"];
+
+    "Political stability" -> "Enforcement intensity"
+        [label="+"];
+
+
+    /* ===== R2: MANUFACTURED IGNORANCE ===== */
+
+    "Knowledge suppression" -> "Historical knowledge"
+        [label="−"];
+
+    "Historical knowledge" -> "Official narrative"
+        [label="−"];
+
+    "Official narrative" -> "Compliance"
+        [label="+"];
+
+    "Compliance" -> "Pact rigidity"
+        [label="+"];
+
+    "Pact rigidity" -> "Knowledge suppression"
+        [label="+"];
+
+
+    /* ===== TECHNICAL ADAPTATION ===== */
+
+    "Infrastructure age" -> "Infrastructure failures"
+        [label="+ | delay"];
+
+    "Infrastructure failures" -> "Maintenance burden"
+        [label="+"];
+
+    "Maintenance burden" -> "Improvisation"
+        [label="+"];
+
+    "Improvisation" -> "Repair capability"
+        [label="+"];
+
+    "Repair capability" -> "Infrastructure reliability"
+        [label="+"];
+
+    "Infrastructure reliability" -> "Infrastructure failures"
+        [label="−"];
+
+
+    /* ===== THE CENTRAL CONTRADICTION ===== */
+
+    "Improvisation" -> "Practical technical skill"
+        [label="+"];
+
+    "Practical technical skill" -> "Curiosity"
+        [label="+"];
+
+    "Curiosity" -> "Experimentation"
+        [label="+"];
+
+    "Experimentation" -> "Innovation"
+        [label="+"];
+
+    "Innovation" -> "Adaptive capacity"
+        [label="+"];
+
+    "Adaptive capacity" -> "System resilience"
+        [label="+"];
+
+    "Innovation" -> "Perceived political threat"
+        [label="+"];
+
+    "Perceived political threat" -> "Enforcement intensity"
+        [label="+"];
+
+    "Enforcement intensity" -> "Restricted technology"
+        [label="+"];
+
+    "Restricted technology" -> "Repair capability"
+        [label="−"];
+
+    "Restricted technology" -> "Innovation"
+        [label="−"];
+
+
+    /* ===== MATERIAL FRAGILITY ===== */
+
+    "Infrastructure failures" -> "Component scarcity"
+        [label="+"];
+
+    "Component scarcity" -> "Repair capability"
+        [label="−"];
+
+    "Component scarcity" -> "Recycling and reuse"
+        [label="+"];
+
+    "Recycling and reuse" -> "Component scarcity"
+        [label="−"];
+
+    "Manufacturing capability" -> "Component scarcity"
+        [label="−"];
+
+    "Manufacturing capability" -> "Adaptive capacity"
+        [label="+"];
+
+
+    /* ===== SPATIAL CONTROL ===== */
+
+    "Pact rigidity" -> "Restrictions on vertical transport"
+        [label="+"];
+
+    "Restrictions on vertical transport" -> "Travel friction"
+        [label="+"];
+
+    "Travel friction" -> "Inter-level contact"
+        [label="−"];
+
+    "Travel friction" -> "Information delay"
+        [label="+"];
+
+    "Inter-level contact" -> "Social distance"
+        [label="−"];
+
+    "Information delay" -> "Collective coordination"
+        [label="−"];
+
+    "Collective coordination" -> "Dissent"
+        [label="+"];
+
+    "Dissent" -> "Perceived political threat"
+        [label="+"];
+
+
+    /* ===== INFORMATION RESISTANCE ===== */
+
+    "Enforcement intensity" -> "Informal knowledge transmission"
+        [label="−"];
+
+    "Enforcement intensity" -> "Clandestine preservation"
+        [label="+?"];
+
+    "Clandestine preservation" -> "Historical knowledge"
+        [label="+"];
+
+    "Historical knowledge" -> "Dissent"
+        [label="+?"];
+
+
+    /* ===== FINAL SYSTEM OUTCOMES ===== */
+
+    "Infrastructure failures" -> "Systemic fragility"
+        [label="+"];
+
+    "Restricted technology" -> "Adaptive capacity"
+        [label="−"];
+
+    "System resilience" -> "Population survival"
+        [label="+"];
+
+    "Systemic fragility" -> "Population survival"
+        [label="−"];
+}

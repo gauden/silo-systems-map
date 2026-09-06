@@ -1,0 +1,370 @@
+/*
+@systems-map
+{
+  "version": 1,
+  "loopAliases": [
+    {
+      "id": "R1",
+      "title": "Control lock-in",
+      "edges": [
+        "e01",
+        "e02",
+        "e03"
+      ]
+    },
+    {
+      "id": "R2",
+      "title": "Manufactured ignorance",
+      "edges": [
+        "e04",
+        "e05",
+        "e06",
+        "e07",
+        "e08"
+      ]
+    }
+  ],
+  "pathways": [
+    {
+      "id": "adaptation",
+      "title": "Adaptation and survival",
+      "question": "How does practical skill connect to survival?",
+      "edges": [
+        "e16",
+        "e17",
+        "e18",
+        "e19",
+        "e20",
+        "e46"
+      ]
+    },
+    {
+      "id": "political-cost",
+      "title": "Political cost of innovation",
+      "question": "How does innovation trigger constraints on adaptation?",
+      "edges": [
+        "e21",
+        "e22",
+        "e23",
+        "e45",
+        "e20",
+        "e46"
+      ]
+    },
+    {
+      "id": "fragility",
+      "title": "Material fragility",
+      "question": "How does scarcity connect to survival through repair and failures?",
+      "edges": [
+        "e27",
+        "e13",
+        "e14",
+        "e44",
+        "e47"
+      ]
+    },
+    {
+      "id": "spatial-control",
+      "title": "Spatial control and dissent",
+      "question": "How do transport restrictions connect to coordination and dissent?",
+      "edges": [
+        "e32",
+        "e33",
+        "e35",
+        "e37",
+        "e38",
+        "e39"
+      ]
+    },
+    {
+      "id": "information-resistance",
+      "title": "Information resistance",
+      "question": "How could enforcement connect to dissent through preservation?",
+      "edges": [
+        "e41",
+        "e42",
+        "e43",
+        "e39"
+      ]
+    },
+    {
+      "id": "maintenance",
+      "title": "Maintenance response",
+      "question": "How do ageing and failure stimulate repair?",
+      "edges": [
+        "e09",
+        "e10",
+        "e11",
+        "e12",
+        "e13"
+      ]
+    }
+  ]
+}
+*/
+digraph SILO_SYSTEM {
+
+    graph [
+        rankdir=LR,
+        splines=spline,
+        overlap=false,
+        compound=true,
+        label="SILO: Survival, Stasis and Systemic Contradiction",
+        labelloc=t
+    ];
+
+    node [
+        shape=box,
+        style="rounded"
+    ];
+
+    edge [
+        fontsize=10
+    ];
+
+    /* -------------------------
+       GOVERNANCE
+       ------------------------- */
+
+    subgraph cluster_control {
+        label="Governance and control";
+
+        "Pact rigidity";
+        "Enforcement intensity";
+        "Surveillance";
+        "Knowledge suppression";
+        "Official narrative";
+        "Compliance";
+        "Political stability";
+        "Perceived political threat";
+        "Restricted technology";
+    }
+
+    /* -------------------------
+       KNOWLEDGE
+       ------------------------- */
+
+    subgraph cluster_knowledge {
+        label="Knowledge and adaptation";
+
+        "Historical knowledge";
+        "Practical technical skill";
+        "Curiosity";
+        "Experimentation";
+        "Innovation";
+        "Informal knowledge transmission";
+        "Clandestine preservation";
+    }
+
+    /* -------------------------
+       ENGINEERING
+       ------------------------- */
+
+    subgraph cluster_engineering {
+        label="Engineering and material system";
+
+        "Infrastructure age";
+        "Infrastructure failures";
+        "Maintenance burden";
+        "Repair capability";
+        "Improvisation";
+        "Component scarcity";
+        "Manufacturing capability";
+        "Recycling and reuse";
+        "Infrastructure reliability";
+    }
+
+    /* -------------------------
+       SPATIAL / SOCIAL
+       ------------------------- */
+
+    subgraph cluster_social {
+        label="Spatial and social structure";
+
+        "Restrictions on vertical transport";
+        "Travel friction";
+        "Inter-level contact";
+        "Information delay";
+        "Social distance";
+        "Collective coordination";
+        "Dissent";
+    }
+
+    /* -------------------------
+       OUTCOMES
+       ------------------------- */
+
+    subgraph cluster_outcomes {
+        label="System outcomes";
+
+        "Adaptive capacity";
+        "System resilience";
+        "Systemic fragility";
+        "Population survival";
+    }
+
+
+    /* ===== R1: CONTROL LOCK-IN ===== */
+
+    "Enforcement intensity" -> "Compliance"
+        [label="+", id="e01", sm_polarity="+"];
+
+    "Compliance" -> "Political stability"
+        [label="+", id="e02", sm_polarity="+"];
+
+    "Political stability" -> "Enforcement intensity"
+        [label="+", id="e03", sm_polarity="+"];
+
+
+    /* ===== R2: MANUFACTURED IGNORANCE ===== */
+
+    "Knowledge suppression" -> "Historical knowledge"
+        [label="−", id="e04", sm_polarity="-"];
+
+    "Historical knowledge" -> "Official narrative"
+        [label="−", id="e05", sm_polarity="-"];
+
+    "Official narrative" -> "Compliance"
+        [label="+", id="e06", sm_polarity="+"];
+
+    "Compliance" -> "Pact rigidity"
+        [label="+", id="e07", sm_polarity="+"];
+
+    "Pact rigidity" -> "Knowledge suppression"
+        [label="+", id="e08", sm_polarity="+"];
+
+
+    /* ===== TECHNICAL ADAPTATION ===== */
+
+    "Infrastructure age" -> "Infrastructure failures"
+        [label="+ | delay", id="e09", sm_polarity="+", sm_delay="unspecified"];
+
+    "Infrastructure failures" -> "Maintenance burden"
+        [label="+", id="e10", sm_polarity="+"];
+
+    "Maintenance burden" -> "Improvisation"
+        [label="+", id="e11", sm_polarity="+"];
+
+    "Improvisation" -> "Repair capability"
+        [label="+", id="e12", sm_polarity="+"];
+
+    "Repair capability" -> "Infrastructure reliability"
+        [label="+", id="e13", sm_polarity="+"];
+
+    "Infrastructure reliability" -> "Infrastructure failures"
+        [label="−", id="e14", sm_polarity="-"];
+
+
+    /* ===== THE CENTRAL CONTRADICTION ===== */
+
+    "Improvisation" -> "Practical technical skill"
+        [label="+", id="e15", sm_polarity="+"];
+
+    "Practical technical skill" -> "Curiosity"
+        [label="+", id="e16", sm_polarity="+"];
+
+    "Curiosity" -> "Experimentation"
+        [label="+", id="e17", sm_polarity="+"];
+
+    "Experimentation" -> "Innovation"
+        [label="+", id="e18", sm_polarity="+"];
+
+    "Innovation" -> "Adaptive capacity"
+        [label="+", id="e19", sm_polarity="+"];
+
+    "Adaptive capacity" -> "System resilience"
+        [label="+", id="e20", sm_polarity="+"];
+
+    "Innovation" -> "Perceived political threat"
+        [label="+", id="e21", sm_polarity="+"];
+
+    "Perceived political threat" -> "Enforcement intensity"
+        [label="+", id="e22", sm_polarity="+"];
+
+    "Enforcement intensity" -> "Restricted technology"
+        [label="+", id="e23", sm_polarity="+"];
+
+    "Restricted technology" -> "Repair capability"
+        [label="−", id="e24", sm_polarity="-"];
+
+    "Restricted technology" -> "Innovation"
+        [label="−", id="e25", sm_polarity="-"];
+
+
+    /* ===== MATERIAL FRAGILITY ===== */
+
+    "Infrastructure failures" -> "Component scarcity"
+        [label="+", id="e26", sm_polarity="+"];
+
+    "Component scarcity" -> "Repair capability"
+        [label="−", id="e27", sm_polarity="-"];
+
+    "Component scarcity" -> "Recycling and reuse"
+        [label="+", id="e28", sm_polarity="+"];
+
+    "Recycling and reuse" -> "Component scarcity"
+        [label="−", id="e29", sm_polarity="-"];
+
+    "Manufacturing capability" -> "Component scarcity"
+        [label="−", id="e30", sm_polarity="-"];
+
+    "Manufacturing capability" -> "Adaptive capacity"
+        [label="+", id="e31", sm_polarity="+"];
+
+
+    /* ===== SPATIAL CONTROL ===== */
+
+    "Pact rigidity" -> "Restrictions on vertical transport"
+        [label="+", id="e32", sm_polarity="+"];
+
+    "Restrictions on vertical transport" -> "Travel friction"
+        [label="+", id="e33", sm_polarity="+"];
+
+    "Travel friction" -> "Inter-level contact"
+        [label="−", id="e34", sm_polarity="-"];
+
+    "Travel friction" -> "Information delay"
+        [label="+", id="e35", sm_polarity="+"];
+
+    "Inter-level contact" -> "Social distance"
+        [label="−", id="e36", sm_polarity="-"];
+
+    "Information delay" -> "Collective coordination"
+        [label="−", id="e37", sm_polarity="-"];
+
+    "Collective coordination" -> "Dissent"
+        [label="+", id="e38", sm_polarity="+"];
+
+    "Dissent" -> "Perceived political threat"
+        [label="+", id="e39", sm_polarity="+"];
+
+
+    /* ===== INFORMATION RESISTANCE ===== */
+
+    "Enforcement intensity" -> "Informal knowledge transmission"
+        [label="−", id="e40", sm_polarity="-"];
+
+    "Enforcement intensity" -> "Clandestine preservation"
+        [label="+?", id="e41", sm_polarity="+", sm_uncertain="true"];
+
+    "Clandestine preservation" -> "Historical knowledge"
+        [label="+", id="e42", sm_polarity="+"];
+
+    "Historical knowledge" -> "Dissent"
+        [label="+?", id="e43", sm_polarity="+", sm_uncertain="true"];
+
+
+    /* ===== FINAL SYSTEM OUTCOMES ===== */
+
+    "Infrastructure failures" -> "Systemic fragility"
+        [label="+", id="e44", sm_polarity="+"];
+
+    "Restricted technology" -> "Adaptive capacity"
+        [label="−", id="e45", sm_polarity="-"];
+
+    "System resilience" -> "Population survival"
+        [label="+", id="e46", sm_polarity="+"];
+
+    "Systemic fragility" -> "Population survival"
+        [label="−", id="e47", sm_polarity="-"];
+}

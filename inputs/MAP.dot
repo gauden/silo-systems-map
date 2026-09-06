@@ -1,0 +1,753 @@
+/*
+@systems-map
+{
+  "version": 1,
+  "loopAliases": [
+    {
+      "id": "R1",
+      "title": "Control lock-in",
+      "edges": [
+        "e01",
+        "e02",
+        "e03"
+      ]
+    },
+    {
+      "id": "R2",
+      "title": "Manufactured ignorance",
+      "edges": [
+        "e04",
+        "e05",
+        "e06",
+        "e07",
+        "e08"
+      ]
+    }
+  ],
+  "pathways": [
+    {
+      "id": "adaptation",
+      "title": "Adaptation and survival",
+      "question": "How does practical skill connect to survival?",
+      "edges": [
+        "e16",
+        "e17",
+        "e18",
+        "e19",
+        "e20",
+        "e46"
+      ]
+    },
+    {
+      "id": "political-cost",
+      "title": "Political cost of innovation",
+      "question": "How does innovation trigger constraints on adaptation?",
+      "edges": [
+        "e21",
+        "e22",
+        "e23",
+        "e45",
+        "e20",
+        "e46"
+      ]
+    },
+    {
+      "id": "fragility",
+      "title": "Material fragility",
+      "question": "How does scarcity connect to survival through repair and failures?",
+      "edges": [
+        "e27",
+        "e13",
+        "e14",
+        "e44",
+        "e47"
+      ]
+    },
+    {
+      "id": "spatial-control",
+      "title": "Spatial control and dissent",
+      "question": "How do transport restrictions connect to coordination and dissent?",
+      "edges": [
+        "e32",
+        "e33",
+        "e35",
+        "e37",
+        "e38",
+        "e39"
+      ]
+    },
+    {
+      "id": "information-resistance",
+      "title": "Information resistance",
+      "question": "How could enforcement connect to dissent through preservation?",
+      "edges": [
+        "e41",
+        "e42",
+        "e43",
+        "e39"
+      ]
+    },
+    {
+      "id": "maintenance",
+      "title": "Maintenance response",
+      "question": "How do ageing and failure stimulate repair?",
+      "edges": [
+        "e09",
+        "e10",
+        "e11",
+        "e12",
+        "e13"
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "adaptation-control",
+      "title": "Adaptation under prohibition",
+      "question": "How can a system survive change while forbidding the means to adapt?",
+      "description": "Survival depends on practical ingenuity, while political control constrains the innovation that ingenuity can produce.",
+      "caveat": "This is a conflict between institutional objectives, not proof that every repair violates the Pact. Authorities may tolerate bounded improvisation while restricting wider technological change.",
+      "evidence": "inferred",
+      "branches": [
+        {
+          "title": "Survival needs adaptation",
+          "explanation": "Practical work builds the skill and curiosity from which adaptive capacity can emerge.",
+          "edges": [
+            "e15",
+            "e16",
+            "e17",
+            "e18",
+            "e19",
+            "e20",
+            "e46"
+          ]
+        },
+        {
+          "title": "Rules suppress adaptation",
+          "explanation": "Technological restrictions can weaken the same adaptive capacity that supports survival.",
+          "edges": [
+            "e73",
+            "e25",
+            "e19",
+            "e20",
+            "e46"
+          ]
+        }
+      ],
+      "sources": []
+    },
+    {
+      "id": "memory-relics",
+      "title": "Knowledge without a past",
+      "question": "How can technical competence endure when records and relics are forbidden?",
+      "description": "A multigenerational infrastructure needs accumulated knowledge. Restrictions on historical materials narrow that inheritance and increase dependence on oral transmission.",
+      "caveat": "A relic ban need not prohibit all operational manuals. The tension is which knowledge survives, who can access it, and how fragile oral transmission becomes when records are removed.",
+      "evidence": "inferred",
+      "branches": [
+        {
+          "title": "Knowledge sustains repair",
+          "explanation": "Informal teaching preserves competence needed to keep infrastructure working.",
+          "edges": [
+            "e53",
+            "e74",
+            "e13"
+          ]
+        },
+        {
+          "title": "Relic restrictions erode memory",
+          "explanation": "Removing potentially useful records can diminish repair knowledge.",
+          "edges": [
+            "e57",
+            "e58",
+            "e59",
+            "e13"
+          ]
+        }
+      ],
+      "sources": [
+        "https://hughhowey.com/wool/"
+      ]
+    },
+    {
+      "id": "paper-publication",
+      "title": "Paper without a public sphere",
+      "question": "Why do writing materials not automatically produce durable independent publication?",
+      "description": "The availability of notebooks and scraps creates a capacity to copy ideas, but sustained independent circulation also requires distribution, trust and protection from enforcement.",
+      "caveat": "Dissent and rebellion do occur in Silo. This is a question about barriers to durable publication, not a claim that organised dissent is absent. Paper access is an author-supplied premise; copying alone does not guarantee collective action.",
+      "evidence": "inferred",
+      "branches": [
+        {
+          "title": "Writing enables circulation",
+          "explanation": "Copying could turn private information into shared knowledge and coordinated dissent.",
+          "edges": [
+            "e61",
+            "e63",
+            "e66",
+            "e38"
+          ]
+        },
+        {
+          "title": "Enforcement constrains circulation",
+          "explanation": "Censorship can interrupt the path from writing to independent coordination.",
+          "edges": [
+            "e65",
+            "e64",
+            "e66",
+            "e38"
+          ]
+        }
+      ],
+      "sources": [
+        "https://www.apple.com/tv-pr/originals/silo/"
+      ]
+    },
+    {
+      "id": "surveillance-knowledge",
+      "title": "Control needs the knowledge it suppresses",
+      "question": "Who maintains the machinery of surveillance if technical knowledge cannot circulate?",
+      "description": "Surveillance supports enforcement but depends on the technical capability that restrictive governance can erode.",
+      "caveat": "This may be sustained through selective privilege: authorities can retain expertise while restricting its wider circulation. The map models a dependency and vulnerability, not a claim that surveillance is technically impossible.",
+      "evidence": "inferred",
+      "branches": [
+        {
+          "title": "Control requires expertise",
+          "explanation": "Operating surveillance depends on practical skill and its transmission.",
+          "edges": [
+            "e53",
+            "e52",
+            "e48"
+          ]
+        },
+        {
+          "title": "Observation chills transmission",
+          "explanation": "Monitoring discourages the exchange that reproduces that expertise.",
+          "edges": [
+            "e50",
+            "e53"
+          ]
+        }
+      ],
+      "sources": []
+    },
+    {
+      "id": "distance-coordination",
+      "title": "Interdependence at a distance",
+      "question": "How can interdependent levels share expertise when movement is deliberately difficult?",
+      "description": "Distributed work requires contact and knowledge exchange, while transport restrictions create friction between the same communities.",
+      "caveat": "Separation may serve political control even while imposing a maintenance cost. Reduced contact does not eliminate all communication; the links describe pressures rather than absolutes.",
+      "evidence": "inferred",
+      "branches": [
+        {
+          "title": "Contact supports maintenance",
+          "explanation": "Contact lets technical knowledge travel to the people who need it.",
+          "edges": [
+            "e55",
+            "e53",
+            "e74",
+            "e13"
+          ]
+        },
+        {
+          "title": "Spatial rules impede exchange",
+          "explanation": "Transport restrictions reduce opportunities for contact and knowledge transfer.",
+          "edges": [
+            "e32",
+            "e33",
+            "e34",
+            "e55"
+          ]
+        }
+      ],
+      "sources": []
+    },
+    {
+      "id": "reuse-relics",
+      "title": "Scarcity versus forbidden reuse",
+      "question": "Can a resource-constrained system afford to discard useful historical objects?",
+      "description": "Reuse conserves scarce components, yet an object classified as prohibited can become unavailable even when it retains practical value.",
+      "caveat": "The conflict applies only where a prohibited artefact has usable material or technical value. It does not mean every relic is useful, every relic is forbidden without exception, or ordinary recycling is prohibited.",
+      "evidence": "inferred",
+      "branches": [
+        {
+          "title": "Reuse relieves scarcity",
+          "explanation": "Reuse reduces scarcity and helps preserve repair capacity.",
+          "edges": [
+            "e29",
+            "e27",
+            "e13"
+          ]
+        },
+        {
+          "title": "Prohibition can remove useful material",
+          "explanation": "Banning a useful historical object can interrupt that material cycle.",
+          "edges": [
+            "e70",
+            "e29",
+            "e27"
+          ]
+        }
+      ],
+      "sources": []
+    },
+    {
+      "id": "truth-punishment",
+      "title": "Safe machinery, unsafe truths",
+      "question": "How can faults be repaired if telling the truth feels dangerous?",
+      "description": "Infrastructure needs accurate information about failures. A punitive information environment can make reporting those failures personally risky.",
+      "caveat": "Fear need not suppress every report. Protected technical channels could mitigate this tension; the supplied model does not establish whether such protections are effective.",
+      "evidence": "inferred",
+      "branches": [
+        {
+          "title": "Repair needs accurate feedback",
+          "explanation": "Reliable fault information supports diagnosis and infrastructure reliability.",
+          "edges": [
+            "e69",
+            "e13"
+          ]
+        },
+        {
+          "title": "Fear degrades feedback",
+          "explanation": "Surveillance can increase fear and discourage the reporting needed for repair.",
+          "edges": [
+            "e67",
+            "e68",
+            "e69"
+          ]
+        }
+      ],
+      "sources": []
+    },
+    {
+      "id": "surveillance-maintenance",
+      "title": "Who maintains the watchers?",
+      "question": "How do hidden cameras and recording devices remain serviceable across generations?",
+      "description": "Long-lived surveillance implies an electronics supply chain, specialist knowledge and recurring maintenance. Those dependencies are difficult to reconcile with an apparently closed, technologically restricted society unless a privileged support system exists.",
+      "caveat": "This is an unresolved infrastructure dependency, not proof that maintenance never occurs offscreen. Stockpiles, covert workshops or privileged access could help. A claim of centuries of unattended operation would need stronger support, and repairing equipment is not equivalent to fabricating replacement chips.",
+      "evidence": "inferred",
+      "branches": [
+        {
+          "title": "Surveillance needs parts and maintenance",
+          "explanation": "Specialised production or stored spares must support a hidden maintenance capability. Generic manufacturing alone does not establish chip fabrication.",
+          "edges": [
+            "e75",
+            "e77",
+            "e79"
+          ]
+        },
+        {
+          "title": "Restrictions constrain replenishment",
+          "explanation": "Restrictions on technology can undermine replenishment unless the authorities exempt their own supply chain.",
+          "edges": [
+            "e81",
+            "e77",
+            "e79"
+          ]
+        },
+        {
+          "title": "Ageing keeps imposing a cost",
+          "explanation": "Cameras and recording devices deteriorate over time; a continuing service requires a compensating maintenance process.",
+          "edges": [
+            "e80",
+            "e48"
+          ]
+        }
+      ],
+      "sources": []
+    }
+  ]
+}
+*/
+digraph SILO_SYSTEM {
+
+    graph [
+        rankdir=LR,
+        splines=spline,
+        overlap=false,
+        compound=true,
+        label="SILO: Survival, Stasis and Systemic Contradiction",
+        labelloc=t
+    ];
+
+    node [
+        shape=box,
+        style="rounded"
+    ];
+
+    edge [
+        fontsize=10
+    ];
+
+    /* -------------------------
+       GOVERNANCE
+       ------------------------- */
+
+    subgraph cluster_control {
+        label="Governance and control";
+
+        "Pact rigidity";
+        "Enforcement intensity";
+        "Surveillance";
+        "Knowledge suppression";
+        "Official narrative";
+        "Compliance";
+        "Political stability";
+        "Perceived political threat";
+        "Restricted technology";
+    
+        "Relic prohibition" [sm_description="Intensity of restrictions on unauthorised historical objects and records.", sm_evidence="inferred"];
+
+        "Censorship" [sm_description="Suppression of unauthorised copying, circulation and publication.", sm_evidence="inferred"];
+
+        "Fear of punishment" [sm_description="Perceived personal cost of reporting unwelcome facts or sharing prohibited knowledge.", sm_evidence="inferred"];
+    }
+
+    /* -------------------------
+       KNOWLEDGE
+       ------------------------- */
+
+    subgraph cluster_knowledge {
+        label="Knowledge and adaptation";
+
+        "Historical knowledge";
+        "Practical technical skill";
+        "Curiosity";
+        "Experimentation";
+        "Innovation";
+        "Informal knowledge transmission";
+        "Clandestine preservation";
+    
+        "Preserved technical knowledge" [sm_description="Technical records and artefacts available for learning across generations.", sm_evidence="inferred"];
+
+        "Paper availability" [sm_description="Access to notebooks or scraps of paper; an author-supplied premise, not a measure of freedom to publish.", sm_evidence="inferred"];
+
+        "Written copying" [sm_description="Capacity to duplicate and preserve information in writing.", sm_evidence="inferred"];
+
+        "Independent publication" [sm_description="Capacity for sustained circulation of information outside official control.", sm_evidence="inferred"];
+
+        "Accurate fault reporting" [sm_description="Willingness and ability to report infrastructure faults and mistakes truthfully.", sm_evidence="inferred"];
+    }
+
+    /* -------------------------
+       ENGINEERING
+       ------------------------- */
+
+    subgraph cluster_engineering {
+        label="Engineering and material system";
+
+        "Infrastructure age";
+        "Infrastructure failures";
+        "Maintenance burden";
+        "Repair capability";
+        "Improvisation";
+        "Component scarcity";
+        "Manufacturing capability";
+        "Recycling and reuse";
+        "Infrastructure reliability";
+    
+        "Surveillance equipment ageing" [sm_evidence="inferred", sm_description="Accumulated wear, corrosion and obsolescence of cameras and recording equipment."];
+
+        "Replacement electronics supply" [sm_evidence="inferred", sm_description="Availability of usable replacement chips, sensors and recording parts; repair skill alone cannot manufacture semiconductors."];
+
+        "Covert maintenance capacity" [sm_evidence="inferred", sm_description="Hidden capacity to inspect, repair and replace surveillance equipment."];
+    }
+
+    /* -------------------------
+       SPATIAL / SOCIAL
+       ------------------------- */
+
+    subgraph cluster_social {
+        label="Spatial and social structure";
+
+        "Restrictions on vertical transport";
+        "Travel friction";
+        "Inter-level contact";
+        "Information delay";
+        "Social distance";
+        "Collective coordination";
+        "Dissent";
+    }
+
+    /* -------------------------
+       OUTCOMES
+       ------------------------- */
+
+    subgraph cluster_outcomes {
+        label="System outcomes";
+
+        "Adaptive capacity";
+        "System resilience";
+        "Systemic fragility";
+        "Population survival";
+    }
+
+
+    /* ===== R1: CONTROL LOCK-IN ===== */
+
+    "Enforcement intensity" -> "Compliance"
+        [label="+", id="e01", sm_polarity="+"];
+
+    "Compliance" -> "Political stability"
+        [label="+", id="e02", sm_polarity="+"];
+
+    "Political stability" -> "Enforcement intensity"
+        [label="+", id="e03", sm_polarity="+"];
+
+
+    /* ===== R2: MANUFACTURED IGNORANCE ===== */
+
+    "Knowledge suppression" -> "Historical knowledge"
+        [label="−", id="e04", sm_polarity="-"];
+
+    "Historical knowledge" -> "Official narrative"
+        [label="−", id="e05", sm_polarity="-"];
+
+    "Official narrative" -> "Compliance"
+        [label="+", id="e06", sm_polarity="+"];
+
+    "Compliance" -> "Pact rigidity"
+        [label="+", id="e07", sm_polarity="+"];
+
+    "Pact rigidity" -> "Knowledge suppression"
+        [label="+", id="e08", sm_polarity="+"];
+
+
+    /* ===== TECHNICAL ADAPTATION ===== */
+
+    "Infrastructure age" -> "Infrastructure failures"
+        [label="+ | delay", id="e09", sm_polarity="+", sm_delay="unspecified"];
+
+    "Infrastructure failures" -> "Maintenance burden"
+        [label="+", id="e10", sm_polarity="+"];
+
+    "Maintenance burden" -> "Improvisation"
+        [label="+", id="e11", sm_polarity="+"];
+
+    "Improvisation" -> "Repair capability"
+        [label="+", id="e12", sm_polarity="+"];
+
+    "Repair capability" -> "Infrastructure reliability"
+        [label="+", id="e13", sm_polarity="+"];
+
+    "Infrastructure reliability" -> "Infrastructure failures"
+        [label="−", id="e14", sm_polarity="-"];
+
+
+    /* ===== THE CENTRAL CONTRADICTION ===== */
+
+    "Improvisation" -> "Practical technical skill"
+        [label="+", id="e15", sm_polarity="+"];
+
+    "Practical technical skill" -> "Curiosity"
+        [label="+", id="e16", sm_polarity="+"];
+
+    "Curiosity" -> "Experimentation"
+        [label="+", id="e17", sm_polarity="+"];
+
+    "Experimentation" -> "Innovation"
+        [label="+", id="e18", sm_polarity="+"];
+
+    "Innovation" -> "Adaptive capacity"
+        [label="+", id="e19", sm_polarity="+"];
+
+    "Adaptive capacity" -> "System resilience"
+        [label="+", id="e20", sm_polarity="+"];
+
+    "Innovation" -> "Perceived political threat"
+        [label="+", id="e21", sm_polarity="+"];
+
+    "Perceived political threat" -> "Enforcement intensity"
+        [label="+", id="e22", sm_polarity="+"];
+
+    "Enforcement intensity" -> "Restricted technology"
+        [label="+", id="e23", sm_polarity="+"];
+
+    "Restricted technology" -> "Repair capability"
+        [label="−", id="e24", sm_polarity="-"];
+
+    "Restricted technology" -> "Innovation"
+        [label="−", id="e25", sm_polarity="-"];
+
+
+    /* ===== MATERIAL FRAGILITY ===== */
+
+    "Infrastructure failures" -> "Component scarcity"
+        [label="+", id="e26", sm_polarity="+"];
+
+    "Component scarcity" -> "Repair capability"
+        [label="−", id="e27", sm_polarity="-"];
+
+    "Component scarcity" -> "Recycling and reuse"
+        [label="+", id="e28", sm_polarity="+"];
+
+    "Recycling and reuse" -> "Component scarcity"
+        [label="−", id="e29", sm_polarity="-"];
+
+    "Manufacturing capability" -> "Component scarcity"
+        [label="−", id="e30", sm_polarity="-"];
+
+    "Manufacturing capability" -> "Adaptive capacity"
+        [label="+", id="e31", sm_polarity="+"];
+
+
+    /* ===== SPATIAL CONTROL ===== */
+
+    "Pact rigidity" -> "Restrictions on vertical transport"
+        [label="+", id="e32", sm_polarity="+"];
+
+    "Restrictions on vertical transport" -> "Travel friction"
+        [label="+", id="e33", sm_polarity="+"];
+
+    "Travel friction" -> "Inter-level contact"
+        [label="−", id="e34", sm_polarity="-"];
+
+    "Travel friction" -> "Information delay"
+        [label="+", id="e35", sm_polarity="+"];
+
+    "Inter-level contact" -> "Social distance"
+        [label="−", id="e36", sm_polarity="-"];
+
+    "Information delay" -> "Collective coordination"
+        [label="−", id="e37", sm_polarity="-"];
+
+    "Collective coordination" -> "Dissent"
+        [label="+", id="e38", sm_polarity="+"];
+
+    "Dissent" -> "Perceived political threat"
+        [label="+", id="e39", sm_polarity="+"];
+
+
+    /* ===== INFORMATION RESISTANCE ===== */
+
+    "Enforcement intensity" -> "Informal knowledge transmission"
+        [label="−", id="e40", sm_polarity="-"];
+
+    "Enforcement intensity" -> "Clandestine preservation"
+        [label="+?", id="e41", sm_polarity="+", sm_uncertain="true"];
+
+    "Clandestine preservation" -> "Historical knowledge"
+        [label="+", id="e42", sm_polarity="+"];
+
+    "Historical knowledge" -> "Dissent"
+        [label="+?", id="e43", sm_polarity="+", sm_uncertain="true"];
+
+
+    /* ===== FINAL SYSTEM OUTCOMES ===== */
+
+    "Infrastructure failures" -> "Systemic fragility"
+        [label="+", id="e44", sm_polarity="+"];
+
+    "Restricted technology" -> "Adaptive capacity"
+        [label="−", id="e45", sm_polarity="-"];
+
+    "System resilience" -> "Population survival"
+        [label="+", id="e46", sm_polarity="+"];
+
+    "Systemic fragility" -> "Population survival"
+        [label="−", id="e47", sm_polarity="-"];
+
+    /* ===== INFERRED GOVERNANCE, KNOWLEDGE AND CONTRADICTION LINKS ===== */
+
+    "Surveillance" -> "Enforcement intensity"
+        [label="+", id="e48", sm_polarity="+", sm_evidence="inferred", sm_description="Observation makes rule violations more detectable and enforcement more targeted."];
+
+    "Enforcement intensity" -> "Surveillance"
+        [label="+", id="e49", sm_polarity="+", sm_evidence="inferred", sm_description="A stronger enforcement apparatus can devote more resources to observation."];
+
+    "Surveillance" -> "Informal knowledge transmission"
+        [label="−", id="e50", sm_polarity="-", sm_evidence="inferred", sm_description="The risk of being observed discourages unauthorised exchanges."];
+
+    "Surveillance" -> "Collective coordination"
+        [label="−", id="e51", sm_polarity="-", sm_evidence="inferred", sm_description="Monitoring can make independent organising riskier."];
+
+    "Practical technical skill" -> "Surveillance"
+        [label="+", id="e52", sm_polarity="+", sm_evidence="inferred", sm_description="Surveillance equipment requires technical skill to operate and maintain."];
+
+    "Informal knowledge transmission" -> "Practical technical skill"
+        [label="+", id="e53", sm_polarity="+", sm_evidence="inferred", sm_description="Apprenticeship and informal exchange transmit practical know-how."];
+
+    "Informal knowledge transmission" -> "Historical knowledge"
+        [label="+", id="e54", sm_polarity="+", sm_evidence="inferred", sm_description="Oral accounts can preserve knowledge excluded from official records."];
+
+    "Inter-level contact" -> "Informal knowledge transmission"
+        [label="+", id="e55", sm_polarity="+", sm_evidence="inferred", sm_description="Contact between levels creates opportunities for knowledge exchange."];
+
+    "Informal knowledge transmission" -> "Collective coordination"
+        [label="+", id="e56", sm_polarity="+", sm_evidence="inferred", sm_description="Shared information supports coordinated action."];
+
+    "Pact rigidity" -> "Relic prohibition"
+        [label="+", id="e57", sm_polarity="+", sm_evidence="inferred", sm_description="Stricter adherence to inherited rules can intensify restrictions on unauthorised relics."];
+
+    "Relic prohibition" -> "Preserved technical knowledge"
+        [label="−", id="e58", sm_polarity="-", sm_evidence="inferred", sm_description="Restrictions on historical records and artefacts can remove information useful for maintenance; not every relic is technically useful."];
+
+    "Preserved technical knowledge" -> "Repair capability"
+        [label="+", id="e59", sm_polarity="+", sm_evidence="inferred", sm_description="Available technical records reduce the need to rediscover repair methods."];
+
+    "Preserved technical knowledge" -> "Historical knowledge"
+        [label="+", id="e60", sm_polarity="+", sm_evidence="inferred", sm_description="Surviving records preserve a memory beyond the official narrative."];
+
+    "Paper availability" -> "Written copying"
+        [label="+", id="e61", sm_polarity="+", sm_evidence="inferred", sm_description="Available writing material enables handwritten duplication and record-keeping."];
+
+    "Written copying" -> "Preserved technical knowledge"
+        [label="+", id="e62", sm_polarity="+", sm_evidence="inferred", sm_description="Copied instructions can preserve practical knowledge across generations."];
+
+    "Written copying" -> "Independent publication"
+        [label="+?", id="e63", sm_polarity="+", sm_evidence="inferred", sm_description="Copying can enable independent circulation if literacy, distribution and safety permit it.", sm_uncertain="true"];
+
+    "Censorship" -> "Independent publication"
+        [label="−", id="e64", sm_polarity="-", sm_evidence="inferred", sm_description="Censorship limits sustained circulation beyond official channels."];
+
+    "Enforcement intensity" -> "Censorship"
+        [label="+", id="e65", sm_polarity="+", sm_evidence="inferred", sm_description="Enforcement gives restrictions on circulation practical force."];
+
+    "Independent publication" -> "Collective coordination"
+        [label="+?", id="e66", sm_polarity="+", sm_evidence="inferred", sm_description="Independent circulation may connect shared grievances and support collective action.", sm_uncertain="true"];
+
+    "Surveillance" -> "Fear of punishment"
+        [label="+", id="e67", sm_polarity="+", sm_evidence="inferred", sm_description="Perceived monitoring can raise the expected risk of punishment."];
+
+    "Fear of punishment" -> "Accurate fault reporting"
+        [label="−", id="e68", sm_polarity="-", sm_evidence="inferred", sm_description="Fear can deter disclosure of mistakes or facts that threaten authority."];
+
+    "Accurate fault reporting" -> "Repair capability"
+        [label="+", id="e69", sm_polarity="+", sm_evidence="inferred", sm_description="Truthful information about faults helps workers diagnose and repair them."];
+
+    "Relic prohibition" -> "Recycling and reuse"
+        [label="−?", id="e70", sm_polarity="-", sm_evidence="inferred", sm_description="Prohibiting a useful historical object can prevent its reuse; this is conditional and does not mean all recycling is banned.", sm_uncertain="true"];
+
+    "Practical technical skill" -> "Manufacturing capability"
+        [label="+", id="e71", sm_polarity="+", sm_evidence="inferred", sm_description="Manufacturing depends on transferable technical competence."];
+
+    "Knowledge suppression" -> "Preserved technical knowledge"
+        [label="−", id="e72", sm_polarity="-", sm_evidence="inferred", sm_description="Suppressing records can reduce knowledge available to later maintainers."];
+
+    "Pact rigidity" -> "Restricted technology"
+        [label="+", id="e73", sm_polarity="+", sm_evidence="inferred", sm_description="Rigid technological rules narrow the range of permitted tools and methods."];
+
+    "Practical technical skill" -> "Repair capability"
+        [label="+", id="e74", sm_polarity="+", sm_evidence="inferred", sm_description="Repair requires knowledge of materials, mechanisms and diagnostic methods."];
+
+    /* ===== THE HIDDEN ELECTRONICS SUPPLY CHAIN ===== */
+
+    "Manufacturing capability" -> "Replacement electronics supply"
+        [label="+?", id="e75", sm_polarity="+", sm_evidence="inferred", sm_description="Only suitably specialised manufacturing could replenish electronics; generic workshops and repair skill are insufficient.", sm_uncertain="true"];
+
+    "Component scarcity" -> "Replacement electronics supply"
+        [label="−", id="e76", sm_polarity="-", sm_evidence="inferred", sm_description="Scarcity reduces access to replacement electronic components."];
+
+    "Replacement electronics supply" -> "Covert maintenance capacity"
+        [label="+", id="e77", sm_polarity="+", sm_evidence="inferred", sm_description="A hidden maintenance system needs replacement parts as well as labour."];
+
+    "Practical technical skill" -> "Covert maintenance capacity"
+        [label="+", id="e78", sm_polarity="+", sm_evidence="inferred", sm_description="Maintaining hidden cameras and recording systems requires technical expertise."];
+
+    "Covert maintenance capacity" -> "Surveillance"
+        [label="+", id="e79", sm_polarity="+", sm_evidence="inferred", sm_description="Maintenance preserves the operation of surveillance equipment."];
+
+    "Surveillance equipment ageing" -> "Surveillance"
+        [label="− | delay", id="e80", sm_polarity="-", sm_evidence="inferred", sm_description="Ageing degrades surveillance equipment over time unless maintenance and replacement compensate.", sm_delay="unspecified"];
+
+    "Restricted technology" -> "Replacement electronics supply"
+        [label="−?", id="e81", sm_polarity="-", sm_evidence="inferred", sm_description="Broad restrictions can constrain replenishment, unless privileged procurement or production is exempt.", sm_uncertain="true"];
+}
