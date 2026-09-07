@@ -97,4 +97,6 @@ Publication verification: GitHub Actions passed its test, build and deploy jobs.
 - [x] Replace the polarity footer sentence with a visible linked authorship credit and linked logo.
 - [x] Verify the link, desktop/mobile presentation, tests and production build.
 - [x] Keep the local planning document out of the repository and remove its public-tree reference.
-- [ ] Commit, publish through GitHub Pages and verify the live link.
+- [x] Commit, publish through GitHub Pages and verify the live link.
+
+Attribution verification: 24 unit tests and 16 browser tests passed, together with the production build. Desktop and mobile layouts were reviewed. GitHub Pages deployed commit `465ce11`; the live logo and “Read the blog post” link resolve to the author’s essay. `inputs/PLAN.md` remains local and ignored, and is absent from the current GitHub tree.
