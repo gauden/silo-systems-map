@@ -100,3 +100,22 @@ Publication verification: GitHub Actions passed its test, build and deploy jobs.
 - [x] Commit, publish through GitHub Pages and verify the live link.
 
 Attribution verification: 24 unit tests and 16 browser tests passed, together with the production build. Desktop and mobile layouts were reviewed. GitHub Pages deployed commit `465ce11`; the live logo and “Read the blog post” link resolve to the author’s essay. `inputs/PLAN.md` remains local and ignored, and is absent from the current GitHub tree.
+
+## Poster-inspired dark cinematic theme (authorised)
+
+### A. Theme contract
+
+- [x] Add failing checks for the approved semantic palette, domain colours and WCAG AA contrast.
+- [x] Preserve positive `#6DABE6` and negative `#E5868C` causal colours exactly.
+
+### B. Interface recolour
+
+- [x] Apply semantic tokens across surfaces, controls, panels, nodes, cards and states.
+- [x] Replace decorative blue, purple and pink with poster greens, olive and gold while retaining semantic error colours.
+- [x] Preserve structure, typography, graph behaviour, accessibility states and attribution links.
+
+### C. Verification and publication
+
+- [x] Run unit/browser tests and production build.
+- [x] Review full model, domain and contradiction at desktop, portrait and landscape sizes.
+- [ ] Commit the theme milestone, push to `main`, and verify GitHub Pages.

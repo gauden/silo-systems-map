@@ -19,4 +19,4 @@ export function svgEl<K extends keyof SVGElementTagNameMap>(
   if (text !== undefined) node.textContent = text;
   return node;
 }
-export const colors = ["#d9aa68", "#76c6bf", "#98bce3", "#ba9bcc", "#bfd085"];
+export const colors = ["#c09e3a", "#42ad83", "#78b978", "#9ea969", "#e0d083"];

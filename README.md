@@ -79,6 +79,10 @@ This MVP supports the supplied directed DOT dataset, not arbitrary Graphviz rend
 
 The force simulation receives copies of nodes/links so D3 mutation cannot alter the source model. Each request receives a fresh random seed; a fixed seed reproduces the same layout for regression checks. Actual text widths inform rectangular collision handling. Reciprocal links use separate curves; blue/red links retain explicit signs and matching arrowheads.
 
+## Theme
+
+The dark cinematic theme draws its charcoal, forest-green, olive and gold palette from the accompanying Silo poster. Semantic CSS tokens define surfaces and text, and automated checks enforce WCAG AA contrast. Positive `#6DABE6` and negative `#E5868C` causal links remain fixed by systems-thinking convention; domains use labelled poster-derived colours and never rely on colour alone.
+
 ## Privacy and failure limits
 
 Runtime scripts and source data are bundled locally. There are no CDN fonts/scripts, analytics, uploads, accounts or external data requests. Package installation needs network access. Fresh offline launches/service-worker caching are not included.
@@ -89,4 +93,4 @@ SVG is constructed with safe DOM APIs and text content; arbitrary source URLs, e
 
 ## Verification
 
-See `TODO.md` for phase completion. 24 unit tests and 16 browser tests cover the expanded dataset, all eight contradictions, all original MVP loops/pathways, neighbourhood focus, desktop/mobile fit, keyboard focus, mouse/touch dragging, malformed input, inert labels, attribution and same-origin requests. Visual checks are captured locally under ignored `output/playwright/`.
+See `TODO.md` for phase completion. 27 unit tests and 16 browser tests cover the expanded dataset, palette contrast, fixed causal colours, all eight contradictions, all original MVP loops/pathways, neighbourhood focus, desktop/mobile fit, keyboard focus, mouse/touch dragging, malformed input, inert labels, attribution and same-origin requests. Visual checks are captured locally under ignored `output/playwright/`.

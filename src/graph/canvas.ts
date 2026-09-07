@@ -180,7 +180,7 @@ export class GraphCanvas {
       const body: Body = { id: node.id, width, height, lines, x: 0, y: 0 };
       this.bodies.set(node.id, body);
       const domain = map.clusters.findIndex((c) => c.id === node.cluster),
-        color = colors[domain] ?? "#9caead";
+        color = colors[domain] ?? "#9dac9f";
       const group = svgEl("g", {
         class: "graph-node",
         tabindex: 0,

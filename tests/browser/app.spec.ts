@@ -140,8 +140,11 @@ test("node click focuses first-degree peers and fit, while curved links preserve
   const positive = page.locator(".graph-edge.positive .edge-line").first(),
     negative = page.locator(".graph-edge.negative .edge-line").first();
   await expect(positive).toHaveAttribute("d", /Q/);
-  expect(await positive.evaluate((el) => getComputedStyle(el).stroke)).not.toBe(
-    await negative.evaluate((el) => getComputedStyle(el).stroke),
+  expect(await positive.evaluate((el) => getComputedStyle(el).stroke)).toBe(
+    "rgb(109, 171, 230)",
+  );
+  expect(await negative.evaluate((el) => getComputedStyle(el).stroke)).toBe(
+    "rgb(229, 134, 140)",
   );
   await page.getByRole("button", { name: "Reset map", exact: true }).click();
   await expect(page.locator(".graph-node")).toHaveCount(47);
