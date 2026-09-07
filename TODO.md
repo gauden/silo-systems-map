@@ -118,4 +118,6 @@ Attribution verification: 24 unit tests and 16 browser tests passed, together wi
 
 - [x] Run unit/browser tests and production build.
 - [x] Review full model, domain and contradiction at desktop, portrait and landscape sizes.
-- [ ] Commit the theme milestone, push to `main`, and verify GitHub Pages.
+- [x] Commit the theme milestone, push to `main`, and verify GitHub Pages.
+
+Theme verification: 27 unit tests and 16 browser tests passed with the production build. Contrast checks cover core text/surface pairs and causal links against both canvas gradient stops. Full model, filtered domain and contradiction views were reviewed at 1440×900, 390×844 and 844×390. GitHub Pages deployed theme commit `8202b60` successfully and the live rendering was inspected.
