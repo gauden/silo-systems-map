@@ -90,3 +90,11 @@ Fresh-layout verification: 24 unit tests, 15 browser tests and production build 
 - [x] Enable GitHub Pages, verify the deployment, and add the live URL to the repository description.
 
 Publication verification: GitHub Actions passed its test, build and deploy jobs. The public HTTPS page returned 200 and loaded all 47 nodes and 81 relationships without browser errors. The repository description and homepage both reference the deployed map.
+
+## Blog attribution (authorised)
+
+- [x] Add the author's blog post prominently near the top of the README.
+- [x] Replace the polarity footer sentence with a visible linked authorship credit and linked logo.
+- [x] Verify the link, desktop/mobile presentation, tests and production build.
+- [x] Keep the local planning document out of the repository and remove its public-tree reference.
+- [ ] Commit, publish through GitHub Pages and verify the live link.

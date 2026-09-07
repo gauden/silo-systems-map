@@ -4,3 +4,5 @@ dist/
 output/
 test-results/
 playwright-report/
+.playwright-cli/
+inputs/PLAN.md

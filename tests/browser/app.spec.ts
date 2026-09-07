@@ -298,6 +298,7 @@ test("contradictions isolate declared branches and explain both the tension and 
   page,
 }) => {
   await page.goto("/");
+  await expect(page.locator('svg[data-ready="true"]')).toBeVisible();
   await page.getByRole("tab", { name: "Contradictions" }).click();
   const chooser = page.getByLabel("Choose contradiction");
   const ids = await chooser
@@ -345,14 +346,12 @@ test("New layout reshuffles the selected contradiction and preserves its content
   await page.getByRole("tab", { name: "Contradictions" }).click();
   await expect(page.locator('svg[data-ready="true"]')).toBeVisible();
   const snapshot = () =>
-    page
-      .locator(".graph-node")
-      .evaluateAll((nodes) =>
-        nodes.map((n) => ({
-          id: n.getAttribute("data-id"),
-          position: n.getAttribute("transform"),
-        })),
-      );
+    page.locator(".graph-node").evaluateAll((nodes) =>
+      nodes.map((n) => ({
+        id: n.getAttribute("data-id"),
+        position: n.getAttribute("transform"),
+      })),
+    );
   const before = await snapshot();
   await page.getByRole("button", { name: "New layout", exact: true }).click();
   await expect(page.locator('svg[data-ready="true"]')).toBeVisible();
@@ -394,4 +393,28 @@ test("New layout works for every subset mode", async ({ page }) => {
     expect(after).not.toEqual(before);
     await expect(page.locator(".graph-edge")).toHaveCount(edges);
   }
+});
+
+test("credits the author and links prominently to the accompanying blog post", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await expect(page.getByText(/Content by Gauden Galea/)).toBeVisible();
+  const credit = page.getByRole("link", { name: /Read the blog post/ });
+  await expect(credit).toBeVisible();
+  await expect(credit).toHaveAttribute(
+    "href",
+    "https://www.gaudengalea.com/lab/silo-systems-map/",
+  );
+  await expect(
+    page.getByRole("link", {
+      name: "Read Gauden Galea’s Silo systems map blog post",
+    }),
+  ).toHaveAttribute(
+    "href",
+    "https://www.gaudengalea.com/lab/silo-systems-map/",
+  );
+  await expect(
+    page.getByText("Polarity describes causal direction"),
+  ).toHaveCount(0);
 });

@@ -8,7 +8,12 @@ import type { SystemsMap, StructureMode } from "./model/types";
 import type { Response } from "./graph/protocol";
 const app = document.querySelector<HTMLDivElement>("#app")!;
 const header = el("header", "header"),
-  brand = el("div", "brand");
+  brand = el("a", "brand");
+brand.href = "https://www.gaudengalea.com/lab/silo-systems-map/";
+brand.setAttribute(
+  "aria-label",
+  "Read Gauden Galea’s Silo systems map blog post",
+);
 brand.append(el("span", "brand-mark", "S"), el("div", "brand-name", "SILO"));
 const subtitle = el("div", "heading");
 subtitle.append(
@@ -68,14 +73,16 @@ panel.append(details, diagnostics, legend);
 workspace.append(canvasWrap, panel);
 app.append(workspace);
 const footer = el("footer", "footer");
-footer.append(
-  el(
-    "span",
-    "",
-    "Polarity describes causal direction, not measured correlation.",
+const blogCredit = el("span", "blog-credit");
+blogCredit.append(
+  document.createTextNode(
+    "📝 Content by Gauden Galea · interface by ChatGPT 6 · ",
   ),
-  el("span", "", "DOT SOURCE · LOCAL EXPLORATION"),
 );
+const blogLink = el("a", "", "Read the blog post →");
+blogLink.href = "https://www.gaudengalea.com/lab/silo-systems-map/";
+blogCredit.append(blogLink);
+footer.append(blogCredit, el("span", "", "DOT SOURCE · LOCAL EXPLORATION"));
 app.append(footer);
 let map: SystemsMap | undefined;
 let state: ViewState = { mode: "model", clusters: [] };

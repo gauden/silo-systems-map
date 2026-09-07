@@ -1,5 +1,7 @@
 # SILO — interactive systems map
 
+> 📝 **Read Gauden Galea’s accompanying essay: [“Seasons of Silo: spirals of (contr)addiction”](https://www.gaudengalea.com/lab/silo-systems-map/).**
+
 A local, static viewer for the supplied Silo causal model: 47 variables, 81 directed relationships, five domains, 356 feedback loops, six approved pathways and eight contradictions. DOT describes the input; D3 computes the layout.
 
 Explore the published map at **https://gauden.github.io/silo-systems-map/**.
@@ -87,4 +89,4 @@ SVG is constructed with safe DOM APIs and text content; arbitrary source URLs, e
 
 ## Verification
 
-See `TODO.md` for phase completion and `inputs/PLAN.md` for the approved scope. 24 unit tests and 15 browser tests cover the expanded dataset, all eight contradictions, all original MVP loops/pathways, neighbourhood focus, desktop/mobile fit, keyboard focus, mouse/touch dragging, malformed input, inert labels and same-origin requests. Visual checks are captured locally under ignored `output/playwright/`.
+See `TODO.md` for phase completion. 24 unit tests and 16 browser tests cover the expanded dataset, all eight contradictions, all original MVP loops/pathways, neighbourhood focus, desktop/mobile fit, keyboard focus, mouse/touch dragging, malformed input, inert labels, attribution and same-origin requests. Visual checks are captured locally under ignored `output/playwright/`.
